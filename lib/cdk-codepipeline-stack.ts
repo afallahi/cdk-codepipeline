@@ -11,11 +11,6 @@ export class CdkCodepipelineStack extends cdk.Stack {
       pipelineName: 'my-pipeline',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('afallahi/cdk-codepipeline', 'cdk-init'),
-        // commands: [
-        //   'yarn install --frozen-lockfile',
-        //   'npx projen build',
-        //   'npx projen synth',
-        // ],
         commands: [
           'npm ci',
           'npm run build',
