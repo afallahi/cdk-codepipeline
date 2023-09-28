@@ -1,17 +1,8 @@
-// import * as cdk from 'aws-cdk-lib';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as CdkCodepipeline from '../lib/cdk-codepipeline-stack';
+import { handler } from "../lib/lambda/handler"
 
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/cdk-codepipeline-stack.ts
-test('SQS Queue Created', () => {
-//   const app = new cdk.App();
-//     // WHEN
-//   const stack = new CdkCodepipeline.CdkCodepipelineStack(app, 'MyTestStack');
-//     // THEN
-//   const template = Template.fromStack(stack);
-
-//   template.hasResourceProperties('AWS::SQS::Queue', {
-//     VisibilityTimeout: 300
-//   });
-});
+describe('Demo test suite', () => {
+    test('handler should return status code 200', async () => {
+        const res = await handler("", "")
+        expect(res.statusCode).toBe(200);
+    })
+})
