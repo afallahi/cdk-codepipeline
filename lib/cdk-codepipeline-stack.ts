@@ -19,7 +19,8 @@ export class CdkCodepipelineStack extends cdk.Stack {
       }),
     });
 
-    const testingStage = pipeline.addStage(new MyPipelineAppStage(this, "test", {
+    const testingStage = pipeline.addStage(new MyPipelineAppStage(this, "PipelineTestStage", {
+      stageName: "test",
       env: { account: "558532633158", region: "us-east-1" }
     }));
 
@@ -29,7 +30,7 @@ export class CdkCodepipelineStack extends cdk.Stack {
       env: { account: "558532633158", region: "us-east-1" }
     }));
 
-    
+
 
   }
 }
